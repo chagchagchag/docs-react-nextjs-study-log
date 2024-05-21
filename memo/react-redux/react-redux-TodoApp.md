@@ -1,6 +1,4 @@
-## react-redux Todo App (1)
-
-> 참고 : plain redux 가 아닌 react-redux 에 대해 개념을 정리합니다.
+## react-redux connect() API : todo App
 
 공식 문서에서 제공하는 todo app 예제를 통해 개념을 정리해봅니다.<br/>
 
@@ -537,6 +535,37 @@ export default connect(mapStateToProps, mapDispatchToProps)(Link);
 ```
 
 <br/>
+
+
+
+(1) : `const Link = ({active, children, onClick}) => { ... }`
+
+- Link 컴포넌트는 active, children 이라는 상태값들, 그리고 onClick 이라고 하는 함수를 props 로 전달받습니다.
+
+(2) : `const mapStateToProps = (state, ownProps) => ({ ... })`
+
+- 현재 props 내의 filter 값과 state 내의 visibilityFilter 값을 비교해서 active 값을 산출해서 객체로 리턴해내는 함수를 mapStateToProps 로 정의합니다.
+- mapStateToProps 는 react-redux 의 connect() API 의 두번째 인자값입니다.
+
+(3) : `const mapDispatchToProps = (dispatch, ownProps) => ({ ... })`
+
+- mapDispatchToProps(dispatch, ownProps) 함수는 인자값으로 전달받은 dispatch 함수로 action 을 수행합니다. `filter(ownProps, filter)` 는 `../actions/todo.actions` 에 정의되어 있는 action 함수입니다.
+
+(4) : `export default connect(mapStateToProps, mapDispatchToProps)(Link);`
+
+- Link 컴포넌트를 store 에 connect() 메서드로 연결하며, 미리 정의해둔 mapStateToProps, mapDispatchToProps 를 인자값으로 전달해서 연결해줍니다.
+
+<br/>
+
+
+
+## action, dispatch, reducer, state
+
+## mapToDispatchToProps() 
+
+## mapStateToProps() 
+
+
 
 
 
