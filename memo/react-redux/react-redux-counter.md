@@ -1,6 +1,8 @@
 ## react-redux hooks - counter app
 
-react-redux 의 hooks API 인 useSelector, useDispatch, Redux Toolkit 에서 제공하는 편의성 함수인 configureStore, createStore 를 사용해서 더 간결한 react-redux 코드에 대해서 알아봅니다. 저도 공부하면서 정리하는 글이기에 내용이 자주 변경될 수 있다는 점 양해해주시기 바랍니다.<br/>
+react-redux 의 hooks API 인 useSelector, useDispatch 와 Redux Toolkit 에서 제공하는 편의성 함수인 configureStore, createStore 및 기타 여러가지 함수들을 사용해서 더 간결한 react-redux 코드를 작성하는 방법에 대해서 알아봅니다. <br/>
+
+저도 공부하면서 정리하는 글이기에 내용이 자주 변경될 수 있다는 점 양해해주시기 바랍니다.<br/>
 
 
 
