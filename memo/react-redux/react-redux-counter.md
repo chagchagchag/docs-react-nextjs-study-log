@@ -24,19 +24,21 @@ react-redux 의 hooks API 인 useSelector, useState, useDispatch 와 Redux Toolk
 
 **useState**<br/>
 
-- 
+- 컴포넌트의 상태관리를 할때 사용되는 컴포넌트 hooks API 입니다.
+- react-redux 의 라이브러리는 아닌 react 내의 라이브러리입니다.
+- 즉, 컴포넌트 레벨의 라이브러리 입니다.
 
 
 
 **useDispatch**<br/>
 
-- 
+- dispatch 를 편하게 쓸 수 있도록 제공되는 react-redux 에서 제공하는 hooks API 입니다.
 
 
 
 **useSelector**<br/>
 
-- 
+- store 내의 state 를 편하게 접근할 수 있도록 제공되는 react-redux 에서 제공하는 hooks API 입니다.
 
 
 
@@ -322,40 +324,26 @@ export function Counter() {
 
 (1)
 
-- 
+- react-redux 의 useSelector, useDispatch 를 import 합니다.
 
 (2)
 
-- 
+- counterSlice 내에 선언한 reducer 들, select 를 하는 state selector 들을 import 하고 있습니다.
 
-(3)
+(3), (4)
 
-- 
-
-(4)
-
-- 
+- store 내의 state.count 를 select 하는 selector 함수를 `count` 라는 이름으로, store 내에서의 dispatch() 함수를 useDispatch() 함수로 가져온 후 별도의 다른 이름의 함수 변수인 `dispatch`로 할당받습니다.
 
 (5)
 
+- useState 를 통해서 Counter 객체 내의 state 를 초기화합니다.
+- incrementAmount 필드와 incrementAmount 필드에 대한 접근자를 각각 incrementAmount, setIncrementAmount 으로 가져오며, Counter 객체 내에 incrementAmount 필드가 없으면 '2' 라는 값으로 초기화 합니다.
 - 
 
-(6)
+(6), (7), (8), (9), (10)
 
-- 
-
-(7)
-
-- 
-
-(8)
-
-- 
-
-(9)
-
-- 
-
-(10)
-
-- 
+- raw 레젤의 react-redux 코드(connect() API)에서 UI 측은 이벤트 발생 시에 Action 을 dispatch() 에 담아서 전달합니다.
+- react-redux 의 hooks API 에서는 dispatch() 함수 내 reducer 를 직접 담아서 전달합니다.
+- react-redux 의 hooks API 에서는 확실히 action 들을 일일이 정의하지 않아도 된다는 점은 장점으로 느껴집니다.
+- ![](https://velog.velcdn.com/images%2Fhyeon4137%2Fpost%2Fe7992ed8-6d9f-498e-816a-b77338b56e40%2Freact-redux-overview.png)
+- 참고 : [velog - React(Redux, React-Redux)](https://velog.io/@hyeon4137/ReactRedux-1)
